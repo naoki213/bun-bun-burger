@@ -19,6 +19,7 @@ const burgers = [
     ingredients:
       'ビーフ / チェダー / レタス / トマト / オニオン / BUN BUNソース',
     note: '迷ったら、まずはこれ。肉も野菜もソースも、全部しっかり。',
+    image: 'hero-burger.webp',
   },
   {
     name: 'DOUBLE CHEESE',
@@ -28,6 +29,7 @@ const burgers = [
     ingredients:
       'ダブルビーフ / ダブルチェダー / ピクルス / オニオン / マスタード',
     note: '肉を食べたぞ、の満足感。チーズは遠慮なく2枚。',
+    image: 'double-cheese.webp',
   },
   {
     name: 'BACON EGG',
@@ -36,6 +38,7 @@ const burgers = [
     color: '#68b8d8',
     ingredients: 'ビーフ / ベーコン / 目玉焼き / レタス / スモーキーソース',
     note: 'とろっと黄身に、カリッとベーコン。お腹が空いた日の正解。',
+    image: 'bacon-egg.webp',
   },
   {
     name: 'HOT CHILI',
@@ -44,6 +47,7 @@ const burgers = [
     color: '#4f8a55',
     ingredients: 'ビーフ / チェダー / ハラペーニョ / チリミート / サルサ',
     note: 'しっかり辛い。でも、もう一口いきたくなる。',
+    image: 'hot-chili.webp',
   },
   {
     name: 'AVOCADO',
@@ -52,6 +56,7 @@ const burgers = [
     color: '#fff3d6',
     ingredients: 'ビーフ / アボカド / トマト / オニオン / ライムマヨ',
     note: 'まろやか、さっぱり、肉汁たっぷり。欲張りな一個。',
+    image: 'avocado.webp',
   },
 ];
 
@@ -240,8 +245,8 @@ export default function Home() {
           <div className="menu-photo">
             <span className="menu-index">0{burger + 1}</span>
             <img
-              src={`${BASE}/images/hero-burger.webp`}
-              alt="クラフトバーガー"
+              src={`${BASE}/images/${burgers[burger].image}`}
+              alt={`${burgers[burger].jp}のクラフトバーガー`}
               loading="lazy"
             />
           </div>
@@ -438,12 +443,39 @@ export default function Home() {
         </div>
         <div className="shop-photo">
           <img
-            src={`${BASE}/images/shop-people.webp`}
-            alt="バーガーを食べながら過ごす二人とオープンキッチン"
+            src={`${BASE}/images/shop-interior.webp`}
+            alt="赤い椅子とオープンキッチンがある店内"
             loading="lazy"
           />
           <span className="tape">GOOD FOOD, GOOD MOOD</span>
         </div>
+      </section>
+
+      <section className="shop-gallery" aria-label="店舗写真">
+        <figure>
+          <img
+            src={`${BASE}/images/shop-exterior.webp`}
+            alt="大阪の街角にある店舗の外観"
+            loading="lazy"
+          />
+          <figcaption>街角の赤いドアが目印。</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={`${BASE}/images/shop-people.webp`}
+            alt="店内でバーガーを楽しむ二人"
+            loading="lazy"
+          />
+          <figcaption>話しながら、かぶりつく。</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={`${BASE}/images/shop-interior.webp`}
+            alt="カウンターと鉄板のある店内"
+            loading="lazy"
+          />
+          <figcaption>鉄板まで、すぐそこ。</figcaption>
+        </figure>
       </section>
 
       <section className="people-section">
